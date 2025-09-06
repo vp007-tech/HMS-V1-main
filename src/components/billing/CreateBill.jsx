@@ -104,7 +104,7 @@ const CreateBill = ({ onClose, onSuccess, appointmentId, patientId }) => {
                 <select
                   name="patientId"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                   value={formData.patientId}
                   onChange={handleChange}
                 >
@@ -163,7 +163,7 @@ const CreateBill = ({ onClose, onSuccess, appointmentId, patientId }) => {
               <button
                 type="button"
                 onClick={addService}
-                className="text-indigo-600 hover:text-indigo-800 text-sm"
+                className="text-primary-600 hover:text-primary-800 text-sm transition-colors"
               >
                 + Add Service
               </button>
@@ -204,7 +204,7 @@ const CreateBill = ({ onClose, onSuccess, appointmentId, patientId }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 disabled:opacity-50"
+                className="flex-1 bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 disabled:opacity-50 transition-colors"
               >
                 {loading ? 'Creating...' : 'Create Bill'}
               </button>
