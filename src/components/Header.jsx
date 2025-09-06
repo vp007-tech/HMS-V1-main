@@ -7,7 +7,7 @@ const Header = () => {
     <header className="bg-white shadow-sm">
       <div className="flex justify-between items-center px-6 py-3">
         <div className="flex items-center">
-          <div className="text-xl font-bold text-indigo-600">Analytics Dashboard</div>
+          <div className="text-xl font-bold text-primary-600">Analytics Dashboard</div>
         </div>
         <div className="flex items-center space-x-4">
           <button className="p-2 rounded-full hover:bg-gray-100">
@@ -20,7 +20,7 @@ const Header = () => {
               onClick={() => setIsProfileOpen(!isProfileOpen)} 
               className="flex items-center focus:outline-none"
             >
-              <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold">
                 U
               </div>
             </button>
