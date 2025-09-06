@@ -60,8 +60,8 @@ const BookAppointment = ({ onClose, onSuccess }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+    <div className="fixed inset-0 bg-neutral-900/50 overflow-y-auto h-full w-full z-50">
+      <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white animate-fade-in">
         <div className="mt-3">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-medium text-gray-900">Book Appointment</h3>
@@ -87,7 +87,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
               <select
                 name="doctorId"
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 value={formData.doctorId}
                 onChange={handleChange}
               >
@@ -109,7 +109,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
                 name="date"
                 required
                 min={new Date().toISOString().split('T')[0]}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 value={formData.date}
                 onChange={handleChange}
               />
@@ -122,7 +122,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
               <select
                 name="time"
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 value={formData.time}
                 onChange={handleChange}
               >
@@ -144,7 +144,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
                 name="reason"
                 required
                 placeholder="Brief description of your concern"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 value={formData.reason}
                 onChange={handleChange}
               />
@@ -158,7 +158,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
                 name="notes"
                 rows="3"
                 placeholder="Any additional information"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                 value={formData.notes}
                 onChange={handleChange}
               />
@@ -168,7 +168,7 @@ const BookAppointment = ({ onClose, onSuccess }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                className="flex-1 bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 transition-colors"
               >
                 {loading ? 'Booking...' : 'Book Appointment'}
               </button>
