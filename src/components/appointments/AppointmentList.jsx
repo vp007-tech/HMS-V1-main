@@ -135,7 +135,7 @@ const AppointmentList = ({ appointments, onUpdate, showPatientInfo = false, show
                     >Complete</button>
                     <button
                       onClick={() => { setSelectedAppointment(appointment); setShowCreateBill(true); }}
-                      className="text-indigo-600 hover:text-indigo-900"
+                      className="text-primary-600 hover:text-primary-900 transition-colors"
                     >Create Bill</button>
                   </>
                 )}
