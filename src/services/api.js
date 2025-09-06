@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = (import.meta?.env?.VITE_API_BASE_URL ?? '/api');
 
 class ApiService {
   constructor() {
@@ -22,14 +22,19 @@ class ApiService {
 
     try {
       const response = await fetch(url, config);
-      const data = await response.json();
+      const contentType = response.headers.get('content-type');
+      const data = contentType && contentType.includes('application/json') ? await response.json() : await response.text();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong');
+        const message = typeof data === 'string' ? data : data?.message;
+        throw new Error(message || 'Request failed');
       }
 
       return data;
     } catch (error) {
+      if (error instanceof TypeError) {
+        throw new Error('Cannot reach server. Please ensure the backend is running or set VITE_API_BASE_URL.');
+      }
       throw error;
     }
   }

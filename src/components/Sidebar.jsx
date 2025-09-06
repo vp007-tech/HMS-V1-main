@@ -21,7 +21,7 @@ const Sidebar = () => {
                   href="#"
                   className={`flex items-center px-4 py-3 text-sm rounded-md ${
                     activeItem === item.id
-                      ? 'bg-indigo-50 text-indigo-700'
+                      ? 'bg-primary-50 text-primary-700'
                       : 'text-gray-600 hover:bg-gray-50'
                   }`}
                   onClick={() => setActiveItem(item.id)}

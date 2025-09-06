@@ -84,7 +84,7 @@ const Chatbot = ({ onClose }) => {
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
       <div className="relative top-10 mx-auto border w-full max-w-2xl shadow-lg rounded-lg bg-white">
         {/* Header */}
-        <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-indigo-600 text-white rounded-t-lg">
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 bg-primary-600 text-white rounded-t-lg">
           <div className="flex items-center space-x-2">
             <span className="text-xl">🤖</span>
             <h3 className="text-lg font-medium">Medical Assistant</h3>
@@ -123,13 +123,13 @@ const Chatbot = ({ onClose }) => {
                 <div
                   className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                     message.role === 'patient'
-                      ? 'bg-indigo-600 text-white'
+                      ? 'bg-primary-600 text-white'
                       : 'bg-gray-200 text-gray-800'
                   }`}
                 >
                   <p className="text-sm">{message.content}</p>
                   <p className={`text-xs mt-1 ${
-                    message.role === 'patient' ? 'text-indigo-200' : 'text-gray-500'
+                    message.role === 'patient' ? 'text-primary-200' : 'text-gray-500'
                   }`}>
                     {formatTime(message.timestamp)}
                   </p>
@@ -170,14 +170,14 @@ const Chatbot = ({ onClose }) => {
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               placeholder="Ask a medical question..."
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-primary-500 focus:border-primary-500"
               disabled={loading}
               maxLength={1000}
             />
             <button
               type="submit"
               disabled={loading || !inputMessage.trim()}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {loading ? '⏳' : '📤'}
             </button>

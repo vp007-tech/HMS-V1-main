@@ -95,7 +95,7 @@ const BillingManagement = ({ userRole: userRoleProp }) => {
         <h3 className="text-lg font-medium text-gray-900">Billing Management</h3>
         <button
           onClick={() => setShowCreateBill(true)}
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
         >
           💰 Create New Bill
         </button>
@@ -128,12 +128,12 @@ const BillingManagement = ({ userRole: userRoleProp }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(bill.dueDate).toLocaleDateString()}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">
                   {bill.paymentProof ? (
-                    <a href={bill.paymentProof} target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">View PDF</a>
+                    <a href={bill.paymentProof} target="_blank" rel="noopener noreferrer" className="text-primary-600 underline hover:text-primary-700 transition-colors">View PDF</a>
                   ) : (
                     userRole === 'patient' && bill.status === 'pending' && (
                       <form onSubmit={e => { e.preventDefault(); handleUploadProof(bill._id, e.target.paymentProof.files[0]); }}>
                         <input type="file" name="paymentProof" accept="application/pdf" required className="mb-2" />
-                        <button type="submit" disabled={uploadingId === bill._id} className="text-indigo-600 hover:text-indigo-900 disabled:opacity-50">Upload</button>
+                        <button type="submit" disabled={uploadingId === bill._id} className="text-primary-600 hover:text-primary-900 disabled:opacity-50 transition-colors">Upload</button>
                       </form>
                     )
                   )}
@@ -143,7 +143,7 @@ const BillingManagement = ({ userRole: userRoleProp }) => {
                     <span className="text-green-600 font-semibold">Verified</span>
                   ) : (
                     userRole === 'doctor' && bill.paymentProof && (
-                      <button onClick={() => handleVerifyPayment(bill._id)} disabled={verifyingId === bill._id} className="text-indigo-600 hover:text-indigo-900 disabled:opacity-50">Verify</button>
+                      <button onClick={() => handleVerifyPayment(bill._id)} disabled={verifyingId === bill._id} className="text-primary-600 hover:text-primary-900 disabled:opacity-50 transition-colors">Verify</button>
                     )
                   )}
                 </td>

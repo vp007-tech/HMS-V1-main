@@ -34,7 +34,7 @@ const AppointmentManagement = () => {
         <h3 className="text-lg font-medium text-gray-900">All Appointments</h3>
         <button
           onClick={() => setShowBooking(true)}
-          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
         >
           📅 Book New Appointment
         </button>
